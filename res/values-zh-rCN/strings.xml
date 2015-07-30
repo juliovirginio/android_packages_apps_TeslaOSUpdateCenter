@@ -38,7 +38,7 @@
     <string name="refresh_button">刷新</string>
 
     <!-- Settings -->
-    <string name="settings_title">OTA设置</string>    
+    <string name="settings_title">OTA设置</string>
     <string name="update_interval_title">自动检索更新周期</string>
     <string name="update_interval_summary">设置自动检索更新周期</string>
     <string name="update_interval_day">每24小时</string>
@@ -69,15 +69,7 @@
     <string name="short_cut_download_gapps_title">谷歌套件</string>
     <string name="short_cut_download_gapps_summary">下载最新的谷歌套件</string>
 
-    <!-- URL's -->
-    <string name="download_url">http://euphoria-os.ninja</string>
-    <string name="changelog_url">http://fs1.androidfilesharing.com/ota/changelog.txt</string>
-    <string name="xda_url">http://forum.xda-developers.com/usercp.php</string>
-    <string name="gapps_url">http://goo.gl/4gG3MH</string>
-    <string name="gapps_url_kitkat">http://goo.gl/KGcni2</string>
-
     <!-- Update checker -->
-    <string name="xml_url_kitkat">http://fs1.androidfilesharing.com/ota/ota_file.xml</string>
     <string name="notification_message">有可用的系统更新</string>
 
     <!-- About -->
@@ -121,13 +113,13 @@
     <string name="btn_delete">现在删除所选的多个软件！</string>
     <string name="delete_progress_title">正在删除</string>
     <string name="delete_progress">所选的文件正在删除，请稍侯。</string>
-    <string name="delete_success">已删除d</string>
+    <string name="delete_success">已删除</string>
     <string name="delete_fail">无法删除</string>
     <string name="btn_profile">配置</string>
     <string name="sizer_message_sdnowrite">无法写入SD卡</string>
     <string name="sizer_message_sdnoread">无法读取SD卡</string>
-    <string name="sizer_message_filesuccess">创建配置文件。</string>
-    <string name="sizer_message_filefail">创建配置文件失败。</string>
-    <string name="sizer_message_noselect">无选择项目。</string>
+    <string name="sizer_message_filesuccess">创建配置文件</string>
+    <string name="sizer_message_filefail">创建配置文件失败</string>
+    <string name="sizer_message_noselect">无选择项目</string>
     <string name="ota_title">更新器</string>
 </resources>
