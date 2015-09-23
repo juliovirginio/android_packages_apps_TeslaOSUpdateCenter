@@ -13,13 +13,13 @@
  *
  *=========================================================================
  */
-package com.euphoria.center;
+package com.teslaos.center;
 
 import java.util.Locale;
 
-import com.euphoria.ota.EuphoriaOTA;
-import com.euphoria.ota.R;
-import com.euphoria.ota.settings.Settings;
+import com.teslaos.ota.TeslaOSOTA;
+import com.teslaos.ota.R;
+import com.teslaos.ota.settings.Settings;
 
 import android.app.Activity;
 import android.app.FragmentManager;
@@ -29,21 +29,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class OTACenter extends Activity {
+public class TeslaOSUpdateCenter extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new EuphoriaOTA()).commit();
+                new TeslaOSOTA()).commit();
         getActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.euphoria_center, menu);
+        inflater.inflate(R.menu.teslaos_center, menu);
         return true;
     }
 

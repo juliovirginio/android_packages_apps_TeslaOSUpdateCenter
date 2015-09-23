@@ -9,12 +9,12 @@
  *  LICENSE   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  *
  *  AUTHORS:     fronti90, mnazim, tchaari, kufikugel
- *  DESCRIPTION: OTACenter keeps our rom up to date
+ *  DESCRIPTION: TeslaOSUpdateCenter keeps our rom up to date
  *
  *=========================================================================
  */
 
-package com.euphoria.ota.updater;
+package com.teslaos.ota.updater;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -36,14 +36,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.euphoria.center.OTACenter;
-import com.euphoria.ota.R;
+import com.teslaos.center.TeslaOSUpdateCenter;
+import com.teslaos.ota.R;
 
 public class UpdateChecker extends AsyncTask<Context, Integer, String> {
     private static final String TAG = "UpdateChecker";
@@ -106,9 +107,9 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
                 String[] line = strLine.split("=");
                 if (line[0].equalsIgnoreCase("ro.product.device")) {
                     strDevice = line[1].trim();
-                } else if (line[0].equalsIgnoreCase("eos.ota.version")) {
+                } else if (line[0].equalsIgnoreCase("tesla.ota.version")) {
                     CurVer = line[1].trim();
-                } else if (strDevice == null && line[0].equalsIgnoreCase("ro.eos.device")){
+                } else if (strDevice == null && line[0].equalsIgnoreCase("ro.tesla.device")){
                     strDevice = line[1].trim();
                 }
             }
@@ -122,7 +123,7 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
     protected String doInBackground(Context... arg) {
         mContext = arg[0];
         Message msg;
-        if (mContext != null && mContext.toString().contains("OTACenter")) {
+        if (mContext != null && mContext.toString().contains("TeslaOSUpdateCenter")) {
             msg = mHandler.obtainMessage(MSG_CREATE_DIALOG);
             mHandler.sendMessage(msg);
         }
@@ -134,7 +135,7 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
             if (strDevice == null || CurVer == null) return null;
             String newUpdateUrl = null;
             String newFileName = null;
-            URL url = new URL(mContext.getString(R.string.xml_url_kitkat));
+            URL url = new URL(mContext.getString(R.string.xml_url));
 
             urlConnection = (HttpURLConnection) url.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -209,7 +210,7 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         if (mNoLog == false) Log.d("\r\n"+TAG, "result= "+result+"\n context="+mContext.toString()+"\r\n");
-        if (mContext != null && mContext.toString().contains("OTACenter")) {
+        if (mContext != null && mContext.toString().contains("TeslaOSUpdateCenter")) {
             Message msg = mHandler.obtainMessage(MSG_CLOSE_DIALOG);
             mHandler.sendMessage(msg);
         } else if (result == null) {
@@ -230,7 +231,7 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
             .setSmallIcon(R.drawable.ic_notification_ota)
             .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.app_icon));
 
-        Intent intent = new Intent(mContext, OTACenter.class);
+        Intent intent = new Intent(mContext, TeslaOSUpdateCenter.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         final PendingIntent pendingIntent = PendingIntent.getActivity(mContext,
                     0, intent, PendingIntent.FLAG_ONE_SHOT);
@@ -243,7 +244,7 @@ public class UpdateChecker extends AsyncTask<Context, Integer, String> {
     }
 
     private void showInvalidLink() {
-        if (mContext != null && mContext.toString().contains("OTACenter")) {
+        if (mContext != null && mContext.toString().contains("TeslaOSUpdateCenter")) {
             Message msg = mHandler.obtainMessage(MSG_DISPLAY_MESSAGE, mContext.getString(R.string.bad_url));
             mHandler.sendMessage(msg);
         } else {

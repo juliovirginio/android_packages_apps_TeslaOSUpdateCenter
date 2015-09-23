@@ -1,3 +1,3 @@
-packages_apps_OTACenter
+packages_apps_TeslaOSUpdateCenter
 ==========================
-Euphoria-OS OTA App
+TeslaOS Update Center
