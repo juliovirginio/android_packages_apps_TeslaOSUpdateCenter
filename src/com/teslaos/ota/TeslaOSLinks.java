@@ -60,7 +60,7 @@ public class TeslaOSLinks extends Fragment {
     private LinearLayout mDownload;
     private LinearLayout mChangelog;
     private LinearLayout mDownloadGapps;
-    private LinearLayout mGoogleplus;
+    private LinearLayout mFBPage;
     private LinearLayout mSource;
     private LinearLayout mReport;
 
@@ -112,8 +112,8 @@ public class TeslaOSLinks extends Fragment {
                 launchUrl(getString(R.string.changelog_url));
             } else if (v == mDownloadGapps) {
               launchUrl(getString(R.string.gapps_url));
-            } else if (v == mGoogleplus) {
-                launchUrl("https://plus.google.com/u/0/communities/116795582851167273031");
+            } else if (v == mFBPage) {
+                launchUrl("https://www.facebook.com/TheTeslaOS");
             } else if (v == mSource) {
                 launchUrl("http://github.com/TeslaOS");
             } else if (v == mReport) {
@@ -141,8 +141,8 @@ public class TeslaOSLinks extends Fragment {
         mDownloadGapps = (LinearLayout) getView().findViewById(R.id.short_cut_download_gapps);
         mDownloadGapps.setOnClickListener(mActionLayouts);
 
-        mGoogleplus = (LinearLayout) getView().findViewById(R.id.googleplus);
-        mGoogleplus.setOnClickListener(mActionLayouts);
+        mFBPage = (LinearLayout) getView().findViewById(R.id.fbpage);
+        mFBPage.setOnClickListener(mActionLayouts);
 
         mSource = (LinearLayout) getView().findViewById(R.id.source);
         mSource.setOnClickListener(mActionLayouts);

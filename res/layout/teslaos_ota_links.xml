@@ -153,7 +153,7 @@
             android:background="@color/divider_color"/>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/googleplus"
+            android:id="@+id/fbpage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -171,7 +171,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="14dp"
                     android:paddingLeft="18dp"
-                    android:text="@string/googleplus_title"
+                    android:text="@string/fbpage_title"
                     android:textAppearance="@android:style/TextAppearance.Material.Subhead"
                     android:textColor="?android:attr/textColorPrimary" />
 
@@ -182,7 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:paddingLeft="23dp"
-                android:text="@string/googleplus_summary"
+                android:text="@string/fbpage_summary"
                 android:textAppearance="@android:style/TextAppearance.Material.Body1"
                 android:textColor="?android:attr/textColorSecondary" />
 

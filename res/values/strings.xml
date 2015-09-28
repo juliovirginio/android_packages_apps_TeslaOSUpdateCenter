@@ -80,8 +80,8 @@
     <string name="notification_message">ROM update available</string>
 
     <!-- About -->
-    <string name="googleplus_title">Google+</string>
-    <string name="googleplus_summary">Visit the Google+ community</string>
+    <string name="fbpage_title">Facebook page</string>
+    <string name="fbpage_summary">Check out our Facebook page and keep updated with us.</string>
     <string name="about_title">About</string>
     <string name="devs">Developer</string>
     <string name="website_title">Website</string>
