@@ -70,7 +70,7 @@
     <string name="short_cut_download_gapps_summary">Download latest Gapps package</string>
 
     <!-- URL's -->
-    <string name="download_url">http://teslaos.github.io/downloads.html</string>
+    <string name="download_url">http://teslaos.github.io/downloads</string>
     <string name="changelog_url">http://teslaos.github.io/changelog.html</string>
     <string name="gapps_url">http://forum.xda-developers.com/android/software/tk-gapps-t3116347</string>
     <string name="gapps_url_kitkat">http://goo.gl/KGcni2</string>
